@@ -19,7 +19,7 @@ class PageViewItem extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.6,
+          height: MediaQuery.of(context).size.height * 0.57,
           child: Stack(
             children: [
               Positioned.fill(
@@ -32,7 +32,7 @@ class PageViewItem extends StatelessWidget {
                 child: SvgPicture.asset(image),
               ),
               Positioned(
-                top: 50,
+                top: 40,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text('تخط'),
