@@ -14,11 +14,7 @@ class OnBoradingPageView extends StatelessWidget {
       controller: pageController,
       children: [
         PageViewItem(
-          isVisible:
-              (pageController.hasClients ? pageController.page!.round() : 0) ==
-                  0
-              ? true
-              : false,
+          isVisible: true,
           image: Assets.imagesPageView1Image,
           backgroundImage: Assets.imagesPageViewItem1BackgroundImage,
           subTitle:
@@ -43,11 +39,7 @@ class OnBoradingPageView extends StatelessWidget {
           ),
         ),
         PageViewItem(
-          isVisible:
-              (pageController.hasClients ? pageController.page!.round() : 0) ==
-                  1
-              ? false
-              : true,
+          isVisible: false,
           image: Assets.imagesPageView2Image,
           backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
           subTitle:
