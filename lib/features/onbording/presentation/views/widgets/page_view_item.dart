@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_text_style.dart';
+import 'package:fruit_hub/features/auth/presentation/views/login_view.dart';
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -38,12 +39,19 @@ class PageViewItem extends StatelessWidget {
                 visible: isVisible,
                 child: Positioned(
                   top: 40,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      'تخط',
-                      style: TextStyles.regular13.copyWith(
-                        color: const Color(0xFF949D9E),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(
+                        context,
+                      ).pushReplacementNamed(LoginView.routeName);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'تخط',
+                        style: TextStyles.regular13.copyWith(
+                          color: const Color(0xFF949D9E),
+                        ),
                       ),
                     ),
                   ),
