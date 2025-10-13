@@ -45,6 +45,7 @@ class _OnBoradingViewBodyState extends State<OnBoradingViewBody> {
             // ignore: deprecated_member_use
             color: currentPage == 1
                 ? AppColors.primaryColor
+                // ignore: deprecated_member_use
                 : AppColors.primaryColor.withOpacity(0.5),
           ),
         ),
