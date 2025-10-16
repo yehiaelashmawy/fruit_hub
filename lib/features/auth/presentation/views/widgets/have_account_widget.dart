@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:fruit_hub/core/utils/app_text_style.dart';
-import 'package:fruit_hub/features/auth/presentation/views/login_view.dart';
 
 class HaveAccountWidget extends StatelessWidget {
   const HaveAccountWidget({super.key});
