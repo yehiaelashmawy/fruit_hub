@@ -1,6 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hub/core/errors/failures.dart';
-import 'package:fruit_hub/features/auth/data/models/user_model.dart';
 import 'package:fruit_hub/features/auth/domain/entites/user_entity.dart';
 import 'package:fruit_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:meta/meta.dart';

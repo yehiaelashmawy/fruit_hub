@@ -36,8 +36,10 @@ dependencies:
   firebase_core: ^4.2.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
+  get_it: ^8.2.0
   shared_preferences: ^2.5.3
   svg_flutter: ^0.0.1
 
