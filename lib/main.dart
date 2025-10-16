@@ -7,7 +7,7 @@ import 'package:fruit_hub/features/splash/presentation/views/splash_view.dart';
 import 'package:fruit_hub/firebase_options.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 
-import 'core/helper_funcations/on_generate_routs.dart';
+import 'core/helper/on_generate_routs.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
