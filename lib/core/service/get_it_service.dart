@@ -10,6 +10,4 @@ void setupGetit() {
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()),
   );
-
-  // Alternatively you could write it if you don't like global variables
 }
