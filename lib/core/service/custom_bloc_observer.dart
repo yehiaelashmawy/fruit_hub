@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:developer' as Log;
+import 'dart:developer';
 
 class CustomBlocObserver extends BlocObserver {
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
     if (kDebugMode) {
-      Log.log('transition: ${bloc.runtimeType} $transition');
+      log('${bloc.runtimeType} $transition');
     }
   }
 
@@ -15,7 +15,7 @@ class CustomBlocObserver extends BlocObserver {
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
     if (kDebugMode) {
-      Log.log('onChange: ${bloc.runtimeType} $change');
+      log('onChange: ${bloc.runtimeType} $change');
     }
   }
 }
