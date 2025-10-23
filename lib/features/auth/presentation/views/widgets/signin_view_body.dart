@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
@@ -31,7 +33,6 @@ class _SigninViewBodyState extends State<SigninViewBody> {
           key: formKey,
           autovalidateMode: autovalidateMode,
           child: Column(
-            spacing: 4,
             children: [
               SizedBox(height: 24),
               CustomTextFormFeild(
@@ -87,12 +88,19 @@ class _SigninViewBodyState extends State<SigninViewBody> {
                 title: 'تسجيل بواسطة جوجل',
               ),
               SizedBox(height: 16),
-              SocialLoginBoutton(
-                onPressed: () {},
-                image: Assets.imagesAppleIcon,
-                title: 'تسجيل بواسطة ابل',
-              ),
-              SizedBox(height: 16),
+              Platform.isIOS
+                  ? Column(
+                      children: [
+                        SocialLoginBoutton(
+                          onPressed: () {},
+                          image: Assets.imagesAppleIcon,
+                          title: 'تسجيل بواسطة ابل',
+                        ),
+                        SizedBox(height: 16),
+                      ],
+                    )
+                  : SizedBox(),
+
               SocialLoginBoutton(
                 onPressed: () {
                   context.read<SigninCubit>().signinWithFacebook();
