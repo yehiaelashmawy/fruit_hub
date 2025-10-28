@@ -35,12 +35,17 @@ class AuthRepoImpl extends AuthRepo {
       await addUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
-      if (user != null) await firebaseAuthService.deleteUser();
+      await deleteUser(user);
       return left(ServerFailure(e.message));
     } catch (e) {
+      await deleteUser(user);
       log('Exption in createUserWithEmailAndPassword: ${e.toString()}');
       return left(ServerFailure('حدث خطأ ما , يرجى المحاولة مرة أخرى'));
     }
+  }
+
+  Future<void> deleteUser(User? user) async {
+    if (user != null) await firebaseAuthService.deleteUser();
   }
 
   @override
@@ -64,10 +69,14 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failures, UserEntity>> signInWithGoogle() async {
+    User? user;
     try {
       var user = await firebaseAuthService.signInWithGoogle();
-      return right(UserModel.fromFirebaseUser(user));
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
+      return right(userEntity);
     } catch (e) {
+      await deleteUser(user);
       log('Exption in signInWithGoogle: ${e.toString()}');
       return left(ServerFailure('حدث خطأ ما , يرجى المحاولة مرة أخرى'));
     }
@@ -75,10 +84,14 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failures, UserEntity>> signInWithFacebook() async {
+    User? user;
     try {
       var user = await firebaseAuthService.signInWithFacebook();
-      return right(UserModel.fromFirebaseUser(user));
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
+      return right(userEntity);
     } catch (e) {
+      await deleteUser(user);
       log('Exption in signInWithFacebook: ${e.toString()}');
       return left(ServerFailure('حدث خطأ ما , يرجى المحاولة مرة أخرى'));
     }
