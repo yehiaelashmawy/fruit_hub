@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/build_error_bar.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruit_hub/features/auth/presentation/views/widgets/signup_view_body.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -13,6 +14,12 @@ class SignupViewBolcConsumer extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSuccess) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: AppColors.lightPrimaryColor,
+              content: Text('تم انشاء الحساب بنجاح'),
+            ),
+          );
           Navigator.pop(context);
         } else if (state is SignupFailure) {
           buildErrorBar(context, state.message);
