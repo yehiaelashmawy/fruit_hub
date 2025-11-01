@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/custom_home_app_bar.dart';
+import 'package:fruit_hub/features/home/presentation/views/widget/featured_item.dart';
+import 'package:fruit_hub/features/home/presentation/views/widget/featured_list.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/search_text_filed.dart';
 
 import '../../../../../constans.dart';
@@ -23,7 +25,8 @@ class HomeViewBody extends StatelessWidget {
                 ),
                 child: const SearchTextField(),
               ),
-              const SizedBox(height: kTopPadding),
+              const SizedBox(height: 12),
+              FeaturedList(),
             ],
           ),
         ),
