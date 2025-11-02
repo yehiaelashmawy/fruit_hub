@@ -7,7 +7,6 @@ import '../../../../../core/utils/app_images.dart';
 
 class FeaturedItem extends StatelessWidget {
   const FeaturedItem({super.key});
-
   @override
   Widget build(BuildContext context) {
     var itemWidth = MediaQuery.sizeOf(context).width - 32;
@@ -26,7 +25,6 @@ class FeaturedItem extends StatelessWidget {
                 bottom: 0,
                 child: SvgPicture.asset(Assets.imagesPageView2Image),
               ),
-
               Container(
                 width: itemWidth / 2,
                 decoration: BoxDecoration(

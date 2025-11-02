@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/features/home/presentation/views/widget/best_selling_header.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/custom_home_app_bar.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/featured_item.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/featured_list.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/search_text_filed.dart';
 
@@ -18,7 +18,6 @@ class HomeViewBody extends StatelessWidget {
             children: [
               const CustomHomeAppBar(),
               const SizedBox(height: kTopPadding),
-
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: kHorizontalPadding,
@@ -27,6 +26,8 @@ class HomeViewBody extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               FeaturedList(),
+              const SizedBox(height: 12),
+              BestSellingHeader(),
             ],
           ),
         ),
