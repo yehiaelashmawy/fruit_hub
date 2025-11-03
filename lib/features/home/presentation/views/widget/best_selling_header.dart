@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../constans.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class BestSellingHeader extends StatelessWidget {
@@ -8,25 +6,20 @@ class BestSellingHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            'الأكثر مبيعًا',
-            textAlign: TextAlign.right,
-            style: TextStyles.bold16,
-          ),
-          Text(
-            'المزيد',
-            textAlign: TextAlign.center,
-            style: TextStyles.regular13.copyWith(
-              color: const Color(0xFF949D9E),
-            ),
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'الأكثر مبيعًا',
+          textAlign: TextAlign.right,
+          style: TextStyles.bold16,
+        ),
+        Text(
+          'المزيد',
+          textAlign: TextAlign.center,
+          style: TextStyles.regular13.copyWith(color: const Color(0xFF949D9E)),
+        ),
+      ],
     );
   }
 }

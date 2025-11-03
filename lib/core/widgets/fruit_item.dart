@@ -9,9 +9,6 @@ class FruitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 190,
-      height: 230,
-
       decoration: ShapeDecoration(
         color: const Color(0xFFF3F5F7),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
@@ -31,7 +28,8 @@ class FruitItem extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 Image.asset(Assets.imagesWatermelonTest),
-                SizedBox(height: 24),
+
+                Spacer(),
                 ListTile(
                   title: Text(
                     'بطيخ',
@@ -73,6 +71,7 @@ class FruitItem extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 20),
               ],
             ),
           ),
