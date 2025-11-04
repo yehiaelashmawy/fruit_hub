@@ -39,9 +39,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         children: bottomNavigationBarItems.asMap().entries.map((e) {
           var index = e.key;
           var entity = e.value;
-          return NavigationBarItem(
-            bottomNavigationBarItems: entity,
-            isSelected: selectedIndex == index,
+          return Expanded(
+            flex: index == selectedIndex ? 3 : 2,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: NavigationBarItem(
+                bottomNavigationBarItems: entity,
+                isSelected: selectedIndex == index,
+              ),
+            ),
           );
         }).toList(),
       ),
