@@ -2,6 +2,22 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesActiveCartIcon
+  /// assets/images/active_cart_icon.svg
+  static const String imagesActiveCartIcon = "assets/images/active_cart_icon.svg";
+
+  /// Assets for imagesActiveHomeIcon
+  /// assets/images/active_home_icon.svg
+  static const String imagesActiveHomeIcon = "assets/images/active_home_icon.svg";
+
+  /// Assets for imagesActiveProductsIcon
+  /// assets/images/active_products_icon.svg
+  static const String imagesActiveProductsIcon = "assets/images/active_products_icon.svg";
+
+  /// Assets for imagesActiveProfileIcon
+  /// assets/images/active_profile_icon.svg
+  static const String imagesActiveProfileIcon = "assets/images/active_profile_icon.svg";
+
   /// Assets for imagesAppIcon
   /// assets/images/app_icon.png
   static const String imagesAppIcon = "assets/images/app_icon.png";
@@ -9,6 +25,10 @@ class Assets {
   /// Assets for imagesAppleIcon
   /// assets/images/apple_icon.svg
   static const String imagesAppleIcon = "assets/images/apple_icon.svg";
+
+  /// Assets for imagesCartIcon
+  /// assets/images/cart_icon.svg
+  static const String imagesCartIcon = "assets/images/cart_icon.svg";
 
   /// Assets for imagesCheckIcon
   /// assets/images/check_icon.svg
@@ -29,6 +49,10 @@ class Assets {
   /// Assets for imagesGoogleIcon
   /// assets/images/google_icon.svg
   static const String imagesGoogleIcon = "assets/images/google_icon.svg";
+
+  /// Assets for imagesHomeIcon
+  /// assets/images/home_icon.svg
+  static const String imagesHomeIcon = "assets/images/home_icon.svg";
 
   /// Assets for imagesLogo
   /// assets/images/logo.svg
@@ -57,6 +81,14 @@ class Assets {
   /// Assets for imagesPlant
   /// assets/images/Plant.svg
   static const String imagesPlant = "assets/images/Plant.svg";
+
+  /// Assets for imagesProductsIcon
+  /// assets/images/products_icon.svg
+  static const String imagesProductsIcon = "assets/images/products_icon.svg";
+
+  /// Assets for imagesProfileIcon
+  /// assets/images/profile_icon.svg
+  static const String imagesProfileIcon = "assets/images/profile_icon.svg";
 
   /// Assets for imagesProfileImage
   /// assets/images/profile_image.png
