@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/constans.dart';
 import 'package:fruit_hub/core/service/firebase_auth_service.dart';
@@ -7,7 +6,6 @@ import 'package:fruit_hub/core/utils/app_images.dart';
 import 'package:fruit_hub/features/auth/presentation/views/signin_view.dart';
 import 'package:fruit_hub/features/onbording/presentation/views/on_borading_view.dart';
 import 'package:svg_flutter/svg.dart';
-
 import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {

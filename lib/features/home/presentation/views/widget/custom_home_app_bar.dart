@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/helper/get_user.dart';
 import 'package:fruit_hub/core/utils/app_text_style.dart';
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/widgets/notification_widget.dart';
@@ -12,12 +13,12 @@ class CustomHomeAppBar extends StatelessWidget {
       contentPadding: const EdgeInsets.symmetric(horizontal: 16),
       leading: Image.asset(Assets.imagesProfileImage),
       title: Text(
-        'صباح الخير !..',
+        DateTime.now().hour < 12 ? 'صباح الخير !..' : 'مساء الخير !..',
         textAlign: TextAlign.right,
         style: TextStyles.regular16.copyWith(color: const Color(0xFF949D9E)),
       ),
       subtitle: Text(
-        'يحيى عبدالحليم',
+        getUser().name,
         textAlign: TextAlign.right,
         style: TextStyles.bold16.copyWith(color: const Color(0xFF0C0D0D)),
       ),
