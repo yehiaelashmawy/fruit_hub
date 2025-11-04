@@ -106,4 +106,8 @@ class FirebaseAuthService {
       facebookAuthCredential,
     )).user!;
   }
+
+  bool isSignedIn() {
+    return FirebaseAuth.instance.currentUser != null;
+  }
 }
