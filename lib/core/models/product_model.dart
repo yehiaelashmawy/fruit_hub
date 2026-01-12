@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:fruit_hub/core/models/review_model.dart';
+
+import '../entites/product_entity.dart';
 
 class ProductModel {
   final String productName;
@@ -6,7 +10,7 @@ class ProductModel {
   final int productPrice;
   final String productDescription;
   final bool isFeatured;
-  // final File productImage;
+  final File productImage;
   String? imageUrl;
   final int expiredMonth;
   final bool isOrganic;
@@ -22,7 +26,7 @@ class ProductModel {
     required this.productCode,
     required this.productPrice,
     required this.productDescription,
-    // required this.productImage,
+    required this.productImage,
     required this.reviews,
     required this.isFeatured,
     required this.isOrganic,
@@ -47,6 +51,25 @@ class ProductModel {
       isOrganic: json['isOrganic'],
       sellingCount: json['sellingCount'],
       reviews: json['reviews'].map((e) => ReviewModel.fromJson(e)).toList(),
+      productImage: File(json['productImage']),
+    );
+  }
+
+  ProductEntity toEntity() {
+    return ProductEntity(
+      productName: productName,
+      productCode: productCode,
+      productPrice: productPrice,
+      productDescription: productDescription,
+      imageUrl: imageUrl,
+      isFeatured: isFeatured,
+      expiredMonth: expiredMonth,
+      numberOfCalories: numberOfCalories,
+      unitAmount: unitAmount,
+      isOrganic: isOrganic,
+      sellingCount: sellingCount,
+      reviews: reviews.map((e) => e.toEntity()).toList(),
+      productImage: productImage,
     );
   }
 

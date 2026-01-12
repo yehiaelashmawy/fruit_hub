@@ -31,5 +31,6 @@ class ProductEntity {
     required this.numberOfCalories,
     required this.unitAmount,
     this.imageUrl,
+    required num sellingCount,
   });
 }
