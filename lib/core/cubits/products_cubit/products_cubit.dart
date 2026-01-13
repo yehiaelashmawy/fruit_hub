@@ -3,31 +3,31 @@ import 'package:fruit_hub/core/entites/product_entity.dart';
 import 'package:fruit_hub/core/repos/products_repo/products_repo.dart';
 import 'package:meta/meta.dart';
 
-part 'products_cubit_state.dart';
+part 'products_state.dart';
 
-class ProductsCubit extends Cubit<ProductsCubitState> {
-  ProductsCubit(this.productsRepo) : super(ProductsCubitInitial());
+class ProductsCubit extends Cubit<ProductsState> {
+  ProductsCubit(this.productsRepo) : super(ProductsInitial());
   final ProductsRepo productsRepo;
 
   Future<void> getProducts() async {
-    emit(ProductsCubitLoading());
+    emit(ProductsLoading());
     var result = await productsRepo.getProducts();
     result.fold(
-      (failure) => emit(ProductsCubitFailure(failure.message)),
-      (products) => emit(ProductsCubitSuccess(products)),
+      (failure) => emit(ProductsFailure(failure.message)),
+      (products) => emit(ProductsSuccess(products)),
     );
   }
 
   Future<void> getBestSellingProducts() async {
-    emit(ProductsCubitLoading());
+    emit(ProductsLoading());
     var result = await productsRepo.getBestSellingProducts();
     result.fold(
       (failure) {
-        print('❌ Products Error: ${failure.message}');
-        emit(ProductsCubitFailure(failure.message));
+        // print('❌ Products Error: ${failure.message}');
+        emit(ProductsFailure(failure.message));
       },
       (products) {
-        emit(ProductsCubitSuccess(products));
+        emit(ProductsSuccess(products));
       },
     );
   }
