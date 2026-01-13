@@ -17,9 +17,9 @@ class ProductsRepoImpl extends ProductsRepo {
           await databaseService.getData(
                 path: BackendEndpoint.getProducts,
                 query: {
-                  'limit;': 10,
+                  'limit': 10,
                   'orderBy': 'sellingCount',
-                  'desending': true,
+                  'descending': true,
                 },
               )
               as List<Map<String, dynamic>>;
