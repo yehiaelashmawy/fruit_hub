@@ -6,7 +6,7 @@ ProductEntity getDummyProduct() {
     productCode: 'APPL',
     productPrice: 10,
     productDescription: 'A red apple',
-    imageUrl: 'https://example.com/apple.jpg',
+    imageUrl: null,
     isFeatured: true,
     expiredMonth: 3,
     numberOfCalories: 100,

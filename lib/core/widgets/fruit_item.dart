@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/entites/product_entity.dart';
+import 'package:fruit_hub/core/widgets/custom_network_image.dart';
 import '../utils/app_colors.dart';
-import '../utils/app_images.dart';
+
 import '../utils/app_text_style.dart';
 
 class FruitItem extends StatelessWidget {
@@ -28,12 +29,22 @@ class FruitItem extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 20),
-                Image.asset(Assets.imagesWatermelonTest),
+                productEntity.imageUrl != null
+                    ? Flexible(
+                        child: CustomNetworkImage(
+                          imageUrl: productEntity.imageUrl!,
+                        ),
+                      )
+                    : Container(
+                        decoration: BoxDecoration(color: Colors.white70),
+                        height: 100,
+                        width: 100,
+                      ),
 
                 Spacer(),
                 ListTile(
                   title: Text(
-                    'بطيخ',
+                    productEntity.productName,
                     textAlign: TextAlign.right,
                     style: TextStyles.semiBold13.copyWith(
                       color: const Color(0xFF0C0D0D),
@@ -43,7 +54,7 @@ class FruitItem extends StatelessWidget {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: '20جنية ',
+                          text: '${productEntity.productPrice}جنية ',
                           style: TextStyles.bold13.copyWith(
                             color: AppColors.sacandaryColor,
                           ),
@@ -55,7 +66,7 @@ class FruitItem extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: ' الكيلو',
+                          text: 'الكيلو',
                           style: TextStyles.semiBold13.copyWith(
                             color: AppColors.lightsacandaryColor,
                           ),
