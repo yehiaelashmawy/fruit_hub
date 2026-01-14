@@ -20,7 +20,7 @@ class ProductsHeader extends StatelessWidget {
         Spacer(),
         Container(
           height: 31,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
           decoration: ShapeDecoration(
             color: Colors.white.withValues(alpha: 0.10),
             shape: RoundedRectangleBorder(

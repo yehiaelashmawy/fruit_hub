@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/best_selling_grid_view_bloc_builder.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/custom_home_app_bar.dart';
+import 'package:fruit_hub/core/widgets/build_app_bar.dart';
+import 'package:fruit_hub/features/home/presentation/views/widget/product_grid_view_bloc_builder.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/products_header.dart';
 import 'package:fruit_hub/features/home/presentation/views/widget/search_text_filed.dart';
 import '../../../../../constans.dart';
@@ -30,7 +30,7 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                const CustomHomeAppBar(),
+                buildAppBar(context, title: 'المنتجات', showBackButton: false),
                 const SizedBox(height: kTopPadding),
                 const SearchTextField(),
                 const SizedBox(height: 12),
@@ -42,7 +42,7 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
             ),
           ),
 
-          BestSellingGridViewBlocBuilder(),
+          ProductGridViewBlocBuilder(),
         ],
       ),
     );

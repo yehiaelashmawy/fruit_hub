@@ -29,16 +29,21 @@ class _MainViewState extends State<MainView> {
           });
         },
       ),
-      body: SafeArea(child: getCurrentView()),
+      body: SafeArea(
+        child: IndexedStack(
+          index: currentViewIndex,
+          children: [HomeView(), ProductView(), CartView(), ProfileView()],
+        ),
+      ),
     );
   }
 
-  Widget getCurrentView() {
-    return const [
-      HomeView(),
-      ProductView(),
-      CartView(),
-      ProfileView(),
-    ][currentViewIndex];
-  }
+  // Widget getCurrentView() {
+  //   return const [
+  //     HomeView(),
+  //     ProductView(),
+  //     CartView(),
+  //     ProfileView(),
+  //   ][currentViewIndex];
+  // }
 }

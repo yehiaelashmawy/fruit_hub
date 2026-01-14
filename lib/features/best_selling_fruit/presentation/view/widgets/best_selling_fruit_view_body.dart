@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/constans.dart';
 import 'package:fruit_hub/core/utils/app_text_style.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/best_seling_grad_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/widget/product_grad_view.dart';
 
 class BestSellingFruitViewBody extends StatelessWidget {
   const BestSellingFruitViewBody({super.key});
@@ -24,7 +24,7 @@ class BestSellingFruitViewBody extends StatelessWidget {
               ),
             ),
           ),
-          BestSelingGridView(products: []),
+          ProductGridView(products: []),
         ],
       ),
     );
