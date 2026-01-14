@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:fruit_hub/core/entites/product_entity.dart';
 
 ProductEntity getDummyProduct() {
@@ -16,7 +14,7 @@ ProductEntity getDummyProduct() {
     isOrganic: true, // Add this line
     sellingCount: 5,
     reviews: [], // Add this line
-    productImage: File(''), // Add this line
+    // Add this line
   );
 }
 

@@ -1,7 +1,5 @@
-import 'dart:io';
-
+import 'package:fruit_hub/core/helper/get_avg_rating.dart';
 import 'package:fruit_hub/core/models/review_model.dart';
-
 import '../entites/product_entity.dart';
 
 class ProductModel {
@@ -10,35 +8,39 @@ class ProductModel {
   final int productPrice;
   final String productDescription;
   final bool isFeatured;
-  final File productImage;
+
   String? imageUrl;
   final int expiredMonth;
   final bool isOrganic;
   final int numberOfCalories;
-  final num avgRating = 0;
+  final num avgRating;
   final num ratingCount = 0;
   final int unitAmount;
   final num sellingCount;
   final List<ReviewModel> reviews;
 
   ProductModel({
+    required this.avgRating,
     required this.productName,
     required this.productCode,
     required this.productPrice,
     required this.productDescription,
-    required this.productImage,
     required this.reviews,
     required this.isFeatured,
     required this.isOrganic,
     required this.sellingCount,
-
     required this.expiredMonth,
     required this.numberOfCalories,
     required this.unitAmount,
     this.imageUrl,
   });
   factory ProductModel.fromJson(Map<String, dynamic> json) {
+    final reviewsList = json['reviews'] != null
+        ? (json['reviews'] as List).map((e) => ReviewModel.fromJson(e)).toList()
+        : <ReviewModel>[];
+
     return ProductModel(
+      avgRating: getAvgRating(reviewsList.map((e) => e.toEntity()).toList()),
       productName: json['productName'],
       productCode: json['productCode'],
       productPrice: json['productPrice'],
@@ -50,8 +52,11 @@ class ProductModel {
       unitAmount: json['unitAmount'],
       isOrganic: json['isOrganic'],
       sellingCount: json['sellingCount'],
-      reviews: json['reviews'].map((e) => ReviewModel.fromJson(e)).toList(),
-      productImage: File(json['productImage']),
+      reviews: json['reviews'] != null
+          ? (json['reviews'] as List)
+                .map((e) => ReviewModel.fromJson(e))
+                .toList()
+          : <ReviewModel>[],
     );
   }
 
@@ -69,7 +74,6 @@ class ProductModel {
       isOrganic: isOrganic,
       sellingCount: sellingCount,
       reviews: reviews.map((e) => e.toEntity()).toList(),
-      productImage: productImage,
     );
   }
 
