@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/features/home/domain/entites/bottom_navigation_bar_entity.dart';
 import 'navigation_bar_item.dart';
 
-class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
+class CustomBottomNavigationBar extends StatelessWidget {
+  final int currentIndex;
+  final ValueChanged<int> onTap;
 
-  @override
-  State<CustomBottomNavigationBar> createState() =>
-      _CustomBottomNavigationBarState();
-}
+  const CustomBottomNavigationBar({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
 
-class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 375,
       height: 70,
-      decoration: ShapeDecoration(
+      decoration: const ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -30,26 +29,22 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             color: Color(0x19000000),
             blurRadius: 25,
             offset: Offset(0, -2),
-            spreadRadius: 0,
           ),
         ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: bottomNavigationBarItems.asMap().entries.map((e) {
-          var index = e.key;
-          var entity = e.value;
+          final index = e.key;
+          final entity = e.value;
+
           return Expanded(
-            flex: index == selectedIndex ? 3 : 2,
+            flex: index == currentIndex ? 3 : 2,
             child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
+              onTap: () => onTap(index),
               child: NavigationBarItem(
                 bottomNavigationBarItems: entity,
-                isSelected: selectedIndex == index,
+                isSelected: currentIndex == index,
               ),
             ),
           );
