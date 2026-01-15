@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/features/best_selling_fruit/presentation/view/best_selling_fruit_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/widget/best_selling_fruit_view.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class BestSellingHeader extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/cart_view.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/home_view.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/product_view.dart';
-import 'package:fruit_hub/features/home/presentation/views/widget/profile_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/cart_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/home_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/product_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/profile_view.dart';
 
 import 'widget/custom_bottom_navigation_bar.dart';
 

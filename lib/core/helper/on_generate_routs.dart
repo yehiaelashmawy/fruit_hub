@@ -5,7 +5,7 @@ import 'package:fruit_hub/features/home/presentation/views/main_view.dart';
 import 'package:fruit_hub/features/onbording/presentation/views/on_borading_view.dart';
 import 'package:fruit_hub/features/splash/presentation/views/splash_view.dart';
 
-import '../../features/best_selling_fruit/presentation/view/best_selling_fruit_view.dart';
+import '../../features/home/presentation/views/widget/best_selling_fruit_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
