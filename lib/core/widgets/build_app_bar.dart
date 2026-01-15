@@ -7,10 +7,13 @@ AppBar buildAppBar(
   BuildContext context, {
   required String title,
   bool showBackButton = true,
+  bool showNotifactionButton = true,
 }) {
   return AppBar(
     actionsPadding: const EdgeInsets.only(left: 16),
-    actions: [NotifactionWidget()],
+    actions: [
+      Visibility(visible: showNotifactionButton, child: NotifactionWidget()),
+    ],
     leading: Padding(
       padding: const EdgeInsets.only(right: 16.0),
       child: Visibility(
@@ -19,7 +22,11 @@ AppBar buildAppBar(
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
           color: Colors.black,
           onPressed: () {
-            Navigator.pop(context);
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              Navigator.pushReplacementNamed(context, 'home');
+            }
           },
         ),
       ),
