@@ -106,6 +106,10 @@ class Assets {
   /// assets/images/splash_bottum.svg
   static const String imagesSplashBottum = "assets/images/splash_bottum.svg";
 
+  /// Assets for imagesTrash
+  /// assets/images/trash.svg
+  static const String imagesTrash = "assets/images/trash.svg";
+
   /// Assets for imagesWatermelonTest
   /// assets/images/watermelon-test.png
   static const String imagesWatermelonTest = "assets/images/watermelon-test.png";
